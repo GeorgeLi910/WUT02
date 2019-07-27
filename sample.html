@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sample</title>
+    
+
+</head>
+
+<body>
+
+<section id="gallery">
+
+<footer>    
+    <div id="circlr">
+
+
+
+    
+      <!-- 將需要的圖片放置在這個區域 開始 -->
+      <img data-src="images/img01.jpg">
+      <img data-src="images/img02.jpg">
+      <img data-src="images/img03.jpg">
+      <img data-src="images/img04.jpg">
+      <img data-src="images/img05.jpg">
+      <img data-src="images/img06.jpg">
+      <img data-src="images/img07.jpg">
+      <img data-src="images/img08.jpg">
+      <img data-src="images/img09.jpg">
+      <img data-src="images/img10.jpg">
+      <img data-src="images/img11.jpg">
+      <img data-src="images/img12.jpg">
+      <img data-src="images/img13.jpg">
+      <img data-src="images/img14.jpg">
+      <img data-src="images/img15.jpg">
+      <img data-src="images/img16.jpg">
+      <img data-src="images/img17.jpg">
+      <img data-src="images/img18.jpg">
+      <img data-src="images/img19.jpg">
+      <img data-src="images/img20.jpg">
+      <img data-src="images/img21.jpg">
+      <img data-src="images/img22.jpg">
+      <img data-src="images/img23.jpg">
+      <img data-src="images/img24.jpg">
+      <!-- 將需要的圖片放置在這個區域 結束-->
+    
+
+
+    </div>
+</section>
+
+</footer>
+
+		<script src="js/jquery.min.js"></script>
+        <script src="js/jquery.singlePageNav.min.js"></script>
+        <script src="js/circlr.min.js"></script>
+        <script>
+
+            // Prevent console.log from generating errors in IE for the purposes of the demo
+            if ( ! window.console ) console = { log: function(){} };
+
+            // The actual plugin
+            $('.single-page-nav').singlePageNav({
+                offset: $('.single-page-nav').outerHeight(),
+                filter: ':not(.external)',
+                updateHash: true,
+                beforeStart: function() {
+                    console.log('begin scrolling');
+                },
+                onComplete: function() {
+                    console.log('done scrolling');
+                }
+            });
+			
+			$(document).ready(function ($) {
+
+				// delegate calls to data-toggle="lightbox"
+				$(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+					event.preventDefault();
+					return $(this).ekkoLightbox({
+						always_show_close: true
+					});
+				});
+
+			});
+
+            var crl = circlr('circlr', {
+              scroll : true,
+              loader : 'loader'
+            });
+			
+        </script>
+
+</body>
+</html>
